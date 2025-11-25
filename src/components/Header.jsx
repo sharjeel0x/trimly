@@ -8,18 +8,18 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@radix-ui/react-dropdown-menu";
-import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
+} from "./ui/dropdown-menu";
+import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { LinkIcon, LogOut } from "lucide-react";
 
 const Header = () => {
   const navigate = useNavigate();
 
-  const user = true;
+  const user = false;
   return (
     <nav className="py-4 flex justify-between items-center">
       <Link to="/">
-        <img src="./logo.png" className="h-16" alt="" />
+        <img src="./logo.png" className="h-26" alt="" />
       </Link>
 
       <div>
