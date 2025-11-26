@@ -72,3 +72,6 @@
     @apply bg-background text-foreground;
   }
 }
+.font-ballo2 {
+  font-family: "Baloo 2", cursive;
+}

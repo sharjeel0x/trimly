@@ -76,11 +76,11 @@ const LinkPage = () => {
             {url?.title}
           </span>
           <a
-            href={`https://trimrr.in/${link}`}
+            href={`https://trimly.url/${link}`}
             target="_blank"
             className="text-3xl sm:text-4xl text-blue-400 font-bold hover:underline cursor-pointer"
           >
-            https://trimrr.in/{link}
+            https://trimly.url/{link}
           </a>
           <a
             href={url?.original_url}

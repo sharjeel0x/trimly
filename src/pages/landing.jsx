@@ -1,7 +1,7 @@
-import {Button} from "@/components/ui/button";
-import {Input} from "@/components/ui/input";
-import {useState} from "react";
-import {useNavigate} from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   Accordion,
   AccordionContent,
@@ -20,8 +20,24 @@ const LandingPage = () => {
 
   return (
     <div className="flex flex-col items-center">
-      <h2 className="my-10 sm:my-16 text-3xl sm:text-6xl lg:text-7xl text-white text-center font-extrabold">
-        The only URL Shortener <br /> you&rsquo;ll ever need! 👇
+      <h2 className="my-10 sm:my-16 text-3xl sm:text-6xl lg:text-7xl text-white text-center font-bold font-ballo2">
+        Customize{" "}
+        <span
+          className=" bg-gradient-to-r from-[#22c55e] via-[#14b8a6] to-[#0f766e]
+ bg-clip-text text-transparent"
+        >
+          Looong
+          
+          <br />
+        </span>
+        and{" "}
+        <span
+          className="relative bg-gradient-to-r from-[#22c55e] via-[#14b8a6] to-[#0f766e]
+ bg-clip-text text-transparent"
+        >
+          Boring
+        </span>{" "}
+        URLs
       </h2>
       <form
         onSubmit={handleShorten}
@@ -34,18 +50,18 @@ const LandingPage = () => {
           onChange={(e) => setLongUrl(e.target.value)}
           className="h-full flex-1 py-4 px-4"
         />
-        <Button type="submit" className="h-full" variant="destructive">
+        <Button type="submit" className="h-full " variant="destructive" >
           Shorten!
         </Button>
       </form>
       <img
-        src="/banner1.jpg" // replace with 2 in small screens
-        className="w-full my-11 md:px-11"
+        src="/banner.jpeg" // replace with 2 in small screens
+        className="w-full my-11 md:px-11 "
       />
       <Accordion type="multiple" collapsible className="w-full md:px-11">
         <AccordionItem value="item-1">
           <AccordionTrigger>
-            How does the Trimrr URL shortener works?
+            How does the Trimly URL shortener works?
           </AccordionTrigger>
           <AccordionContent>
             When you enter a long URL, our system generates a shorter version of
