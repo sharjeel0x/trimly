@@ -1,6 +1,6 @@
-# URL Shortener
+# Trimly - URL Shortener
 
-A full-stack URL shortener built with **React**, **Tailwind CSS**, **Supabase**, and **Shadcn UI**. Shorten links fast, track clicks, and manage your URLs easily.
+A full-stack URL shortener built with React, Tailwind CSS, Supabase, and Shadcn UI. Shorten links fast, track clicks, and manage your URLs easily.
 
 ---
 
@@ -15,17 +15,29 @@ A full-stack URL shortener built with **React**, **Tailwind CSS**, **Supabase**,
 
 ## Setup
 
-git clone https://github.com/sharjeel0x/trimly
-cd trimly
-npm install
-Create a .env file in the project root with:
+1. Clone the repository and install dependencies:  
+   git clone https://github.com/sharjeel0x/trimly  
+   cd trimly  
+   npm install  
 
+2. Create a `.env` file in the project root with your Supabase credentials:  
+   VITE_SUPABASE_URL=your_supabase_url  
+   VITE_SUPABASE_KEY=your_supabase_key  
 
+3. Run the app:  
+   npm run dev  
 
-VITE_SUPABASE_URL=your_supabase_url
-VITE_SUPABASE_KEY=your_supabase_key
-Run the app:
+---
 
-bash
+## Tech Stack
 
-npm run dev
+- Frontend: React JS, Tailwind CSS, Shadcn UI  
+- Backend / Database: Supabase  
+
+---
+
+## Future Ideas
+
+- Add user authentication for private links  
+- Expiration date for shortened URLs  
+- Detailed click analytics
