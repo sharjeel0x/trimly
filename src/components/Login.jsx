@@ -38,11 +38,11 @@ const Login = () => {
   };
 
   const {loading, error, fn: fnLogin, data} = useFetch(login, formData);
-  const {fetchUser} = UrlState() || {};
+  const {fetchUser} = UrlState();
 
   useEffect(() => {
     if (error === null && data) {
-      fetchUser;
+      fetchUser();
       navigate(`/dashboard?${longLink ? `createNew=${longLink}` : ""}`);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps

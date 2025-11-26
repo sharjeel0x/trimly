@@ -1,51 +1,57 @@
-import { Button } from "@/components/ui/button";
-import { createBrowserRouter, Link, RouterProvider } from "react-router-dom";
-import AppLayout from "./layouts/AppLayout";
-import LandingPage from "./pages/LandingPage";
-import Auth from "./pages/Auth";
-import Dashboard from "./pages/Dashboard";
-import RedirectLink from "./pages/RedirectLink";
+import "./App.css";
+import {RouterProvider, createBrowserRouter} from "react-router-dom";
+import UrlProvider from "./context";
+
+import AppLayout from "./layouts/app-layout";
+import RequireAuth from "./components/require-auth";
+
+import RedirectLink from "./pages/redirect-link";
+import LandingPage from "./pages/landing";
+import Dashboard from "./pages/dashboard";
+import LinkPage from "./pages/link";
+import Auth from "./pages/auth";
+
+const router = createBrowserRouter([
+  {
+    element: <AppLayout />,
+    children: [
+      {
+        path: "/",
+        element: <LandingPage />,
+      },
+      {
+        path: "/auth",
+        element: <Auth />,
+      },
+      {
+        path: "/dashboard",
+        element: (
+          <RequireAuth>
+            <Dashboard />
+          </RequireAuth>
+        ),
+      },
+      {
+        path: "/link/:id",
+        element: (
+          <RequireAuth>
+            <LinkPage />
+          </RequireAuth>
+        ),
+      },
+      {
+        path: "/:id",
+        element: <RedirectLink />,
+      },
+    ],
+  },
+]);
 
 function App() {
-  const router = createBrowserRouter([
-    {
-      element: <AppLayout />,
-
-      children: [
-        {
-          path: "/",
-
-          element: <LandingPage />,
-        },
-
-        {
-          path: "/auth",
-
-          element: <Auth />,
-        },
-
-        {
-          path: "/dashboard",
-
-          element: <Dashboard />,
-        },
-
-        {
-          path: "/link/:id",
-
-          element: <Link />,
-        },
-
-        {
-          path: "/:id",
-
-          element: <RedirectLink />,
-        },
-      ],
-    },
-  ]);
   return (
-    <RouterProvider router={router} />
+    <UrlProvider>
+      <RouterProvider router={router} />
+    </UrlProvider>
   );
 }
 
